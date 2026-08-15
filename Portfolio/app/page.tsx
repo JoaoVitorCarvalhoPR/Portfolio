@@ -1,7 +1,7 @@
 import { Header } from "@/components/portfolio/header"
 import { Hero } from "@/components/portfolio/hero"
 import { Career } from "@/components/portfolio/career"
-import { Games } from "@/components/portfolio/games"
+import { Work } from "@/components/portfolio/work"
 import { Highlights } from "@/components/portfolio/highlights"
 import { Contact } from "@/components/portfolio/contact"
 import { Footer } from "@/components/portfolio/footer"
@@ -13,7 +13,7 @@ export default function Home() {
       <main>
         <Hero />
         <Career />
-        <Games />
+        <Work />
         <Highlights />
         <Contact />
       </main>

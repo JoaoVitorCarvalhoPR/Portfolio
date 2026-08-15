@@ -5,8 +5,9 @@
 
 export const siteConfig = {
   name: "João Rodrigues",
-  title: "Roblox Game Developer",
-  description: "Software Developer focused on Roblox game creation.",
+  title: "Software Developer — AI/LLM Systems & Roblox Game Development",
+  description:
+    "Software developer building AI-powered products (LLM integrations, RAG, automation) and Roblox game experiences.",
   email: "joaovcprodrigues@gmail.com",
   social: {
     roblox: "https://www.roblox.com/users/43706814/profile",
@@ -126,6 +127,36 @@ export const games: Game[] = [
 ]
 
 // ============================================
+// PROJECTS (non-game work)
+// ============================================
+
+export type Project = {
+  id: string
+  slug: string // used for the detail-page route, e.g. "real-estate-ai-chatbot"
+  title: string
+  description: string
+  imageUrl?: string // URL of a thumbnail image, if any
+  fallbackIcon?: string // emoji shown when no imageUrl is set
+  tags: string[]
+  featured?: boolean
+  externalUrl?: string // e.g. GitHub repo link, shown on the detail page
+}
+
+export const projects: Project[] = [
+  {
+    id: "1",
+    slug: "real-estate-ai-chatbot",
+    title: "Real Estate Assistant on WhatsApp",
+    description:
+      "AI chatbot for a real client, built on WhatsApp via SendPulse and orchestrated with n8n. Uses OpenAI (chat, embeddings, vision, audio transcription) with RAG over a PostgreSQL/Supabase + pgvector property database, Meta-ad lead attribution, multi-modal message handling, and human handoff.",
+    fallbackIcon: "💬",
+    tags: ["AI/LLM", "n8n", "RAG", "OpenAI", "PostgreSQL", "Automation"],
+    featured: true,
+    externalUrl: "https://github.com/JoaoVitorCarvalhoPR/real-estate-ai-chatbot",
+  },
+]
+
+// ============================================
 // HIGHLIGHTS / ACHIEVEMENTS
 // ============================================
 
@@ -176,4 +207,9 @@ export const skills = [
   "Git/GitHub",
   "JavaScript",
   "TypeScript",
+  "LLM Integration (OpenAI API)",
+  "RAG / Vector Search (pgvector)",
+  "n8n / Workflow Automation",
+  "PostgreSQL",
+  "Node.js",
 ]

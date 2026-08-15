@@ -15,7 +15,7 @@ export function Hero() {
         </p>
         <div className="flex flex-wrap gap-4">
           <a
-            href="#games"
+            href="#work"
             className="px-6 py-3 bg-foreground text-background font-medium rounded-md hover:bg-foreground/90 transition-colors"
           >
             View Projects

@@ -5,7 +5,7 @@ import { siteConfig } from "@/data/portfolio-data"
 const navLinks = [
   { href: "#about", label: "About" },
   { href: "#career", label: "Career" },
-  { href: "#games", label: "Games" },
+  { href: "#work", label: "Work" },
   { href: "#highlights", label: "Highlights" },
   { href: "#contact", label: "Contact" },
 ]
