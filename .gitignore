@@ -26,3 +26,8 @@ pnpm-debug.log*
 
 # local tool config (not meant for the shared repo)
 .claude/
+
+# pnpm auto-generates this as a placeholder when prompting about build
+# scripts (e.g. sharp). This is a single-package repo, not a workspace, and
+# committing it breaks CI: pnpm aborts with "packages field missing or empty".
+pnpm-workspace.yaml
