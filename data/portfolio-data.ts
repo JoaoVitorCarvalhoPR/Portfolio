@@ -149,6 +149,7 @@ export const projects: Project[] = [
     title: "Real Estate Assistant on WhatsApp",
     description:
       "AI chatbot for a real client, built on WhatsApp via SendPulse and orchestrated with n8n. Uses OpenAI (chat, embeddings, vision, audio transcription) with RAG over a PostgreSQL/Supabase + pgvector property database, Meta-ad lead attribution, multi-modal message handling, and human handoff.",
+    imageUrl: "/Portfolio/projects/real-estate-ai-chatbot-workflow.png",
     fallbackIcon: "💬",
     tags: ["AI/LLM", "n8n", "RAG", "OpenAI", "PostgreSQL", "Automation"],
     featured: true,
