@@ -84,7 +84,7 @@ function GameCard({ game, featured = false }: { game: Game; featured?: boolean }
           featured ? "md:w-1/2 md:aspect-auto md:min-h-[200px]" : ""
         }`}
       >
-        <div className="text-muted-foreground text-sm">
+        <div className="w-full h-full flex items-center justify-center text-muted-foreground text-sm">
           {game.imageUrl ? (
             <img src={game.imageUrl} alt={game.title} className="w-full h-full object-cover" />
           ) : (
@@ -183,7 +183,7 @@ function ProjectCard({ project, featured = false }: { project: Project; featured
           featured ? "md:w-1/2 md:aspect-auto md:min-h-[200px]" : ""
         }`}
       >
-        <div className="text-muted-foreground text-sm">
+        <div className="w-full h-full flex items-center justify-center text-muted-foreground text-sm">
           {project.imageUrl ? (
             <img src={project.imageUrl} alt={project.title} className="w-full h-full object-cover" />
           ) : (
