@@ -96,7 +96,7 @@ export const games: Game[] = [
     id: "1",
     title: "BELINHA MISSÃO ZARA!",
     description: "Developed exclusively for a prominent YouTuber, providing an immersive experience designed to connect the creator with their fanbase.",
-    imageUrl: "", // Add the URL of your game logo here (e.g. "https://tr.rbxcdn.com/...")
+    imageUrl: "https://tr.rbxcdn.com/180DAY-8a12367a3d56dbc477628478d33455d8/768/432/Image/Webp/noFilter", // Add the URL of your game logo here (e.g. "https://tr.rbxcdn.com/...")
     robloxUrl: "https://www.roblox.com/games/103497891256081/MISS-O-ZARA-EXPERI-NCIA-OFICIAL",
     players: "1.5M+",
     likes: "1K+",
@@ -107,7 +107,7 @@ export const games: Game[] = [
     id: "2",
     title: "Pats vs. Monsters",
     description: "Defeat monsters and collect a wide variety of pets by opening card packs!",
-    imageUrl: "", // Add the URL of your game logo here
+    imageUrl: "https://tr.rbxcdn.com/180DAY-af8a4bc8d9c3e2cb9aaf5b65371ecd17/768/432/Image/Webp/noFilter", 
     robloxUrl: "https://www.roblox.com/games/106098137333680/PETS-VS-MONSTERS",
     players: "30K+",
     likes: "5+",
@@ -117,7 +117,7 @@ export const games: Game[] = [
     id: "3",
     title: "Serve the Costumer",
     description: "Build, upgrade, and manage your own food machines to keep every customer satisfied.",
-    imageUrl: "", // Add the URL of your game logo here
+    imageUrl: "https://tr.rbxcdn.com/180DAY-5abd40e25580f78988c043ea508cc467/256/256/Image/Webp/noFilter", 
     robloxUrl: "https://www.roblox.com/games/120424429814872/Serve-the-Customers",
     players: "100K+",
     likes: "5K+",
