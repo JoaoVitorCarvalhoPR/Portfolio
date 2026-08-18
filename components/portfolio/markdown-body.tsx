@@ -9,7 +9,9 @@ const markdownComponents: Components = {
     <h1 className="text-2xl font-bold text-foreground mt-10 mb-4 first:mt-0">{children}</h1>
   ),
   h2: ({ children }) => (
-    <h2 className="text-xl font-bold text-foreground mt-10 mb-4">{children}</h2>
+    <h2 className="text-xl font-bold text-foreground mt-10 mb-4 border-l-2 border-accent/50 pl-3">
+      {children}
+    </h2>
   ),
   h3: ({ children }) => (
     <h3 className="text-lg font-semibold text-foreground mt-8 mb-3">{children}</h3>
@@ -47,7 +49,9 @@ const markdownComponents: Components = {
     <td className="border border-border px-3 py-2 text-muted-foreground">{children}</td>
   ),
   pre: ({ children }) => (
-    <pre className="bg-secondary rounded-lg p-4 overflow-x-auto mb-6 text-sm">{children}</pre>
+    <pre className="bg-secondary border border-border rounded-lg p-4 overflow-x-auto mb-6 text-sm">
+      {children}
+    </pre>
   ),
   code: ({ className, children, ...props }) => {
     const isFenced = Boolean(className)
