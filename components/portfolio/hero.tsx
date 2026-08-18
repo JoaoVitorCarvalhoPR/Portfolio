@@ -1,8 +1,10 @@
-import { siteConfig, careerItems, games, projects } from "@/data/portfolio-data"
+import { siteConfig, careerItems } from "@/data/portfolio-data"
 import { MapPin } from "lucide-react"
 
 export function Hero() {
-  const startYear = Math.min(...careerItems.map((item) => Number.parseInt(item.startDate, 10)))
+  const startYear = Math.min(
+    ...careerItems.map((item) => Number(item.startDate.match(/\d{4}/)?.[0]))
+  )
   const yearsBuilding = new Date().getFullYear() - startYear
 
   const initials = siteConfig.name
@@ -11,12 +13,6 @@ export function Hero() {
     .slice(0, 2)
     .join("")
     .toUpperCase()
-
-  const stats = [
-    { label: "Years Building", value: `${yearsBuilding}+` },
-    { label: "Games Shipped", value: `${games.length}` },
-    { label: "AI/LLM Projects", value: `${projects.length}` },
-  ]
 
   return (
     <section id="about" className="relative pt-32 pb-20 px-6">
@@ -73,15 +69,11 @@ export function Hero() {
               </a>
             </div>
 
-            <div className="flex flex-wrap gap-x-8 gap-y-4">
-              {stats.map((stat) => (
-                <div key={stat.label}>
-                  <div className="text-2xl font-bold bg-gradient-to-r from-accent to-accent-secondary bg-clip-text text-transparent">
-                    {stat.value}
-                  </div>
-                  <div className="text-sm text-muted-foreground">{stat.label}</div>
-                </div>
-              ))}
+            <div>
+              <div className="text-2xl font-bold bg-gradient-to-r from-accent to-accent-secondary bg-clip-text text-transparent">
+                {yearsBuilding}+
+              </div>
+              <div className="text-sm text-muted-foreground">Years Building</div>
             </div>
           </div>
         </div>
