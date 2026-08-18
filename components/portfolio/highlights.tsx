@@ -1,5 +1,6 @@
 import { highlights, type Highlight } from "@/data/portfolio-data"
 import { Trophy, Mic, Plane, Award, Target } from "lucide-react"
+import { Reveal } from "@/components/portfolio/reveal"
 
 const iconMap: Record<Highlight["type"], React.ReactNode> = {
   achievement: <Trophy className="w-5 h-5" />,
@@ -19,8 +20,10 @@ export function Highlights() {
         </p>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {highlights.map((highlight) => (
-            <HighlightCard key={highlight.id} highlight={highlight} />
+          {highlights.map((highlight, i) => (
+            <Reveal key={highlight.id} delay={i * 80}>
+              <HighlightCard highlight={highlight} />
+            </Reveal>
           ))}
         </div>
       </div>

@@ -9,6 +9,7 @@ export const siteConfig = {
   description:
     "Software developer building AI-powered products (LLM integrations, RAG, automation) and Roblox game experiences.",
   avatarUrl: "", // URL or /path/to/photo.jpg — falls back to initials when empty
+  location: "Vila Velha, Espírito Santo",
   email: "joaovcprodrigues@gmail.com",
   social: {
     roblox: "https://www.roblox.com/users/43706814/profile",

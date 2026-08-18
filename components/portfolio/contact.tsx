@@ -1,6 +1,7 @@
 import { siteConfig } from "@/data/portfolio-data"
 import { Mail, Linkedin, Instagram } from "lucide-react"
 import { RobloxIcon, DiscordIcon } from "@/components/icons"
+import { Reveal } from "@/components/portfolio/reveal"
 
 export function Contact() {
   return (
@@ -13,7 +14,7 @@ export function Contact() {
 
         <div className="grid md:grid-cols-2 gap-8">
           {/* Email */}
-          <div>
+          <Reveal>
             <a
               href={`mailto:${siteConfig.email}`}
               className="group flex items-center gap-3 p-4 bg-card border border-border rounded-lg hover:border-accent/50 hover:shadow-[0_0_30px_-12px_var(--accent)] transition-all"
@@ -28,10 +29,10 @@ export function Contact() {
                 </div>
               </div>
             </a>
-          </div>
+          </Reveal>
 
           {/* Social Links */}
-          <div className="flex flex-wrap gap-3">
+          <Reveal delay={80} className="flex flex-wrap gap-3">
             {siteConfig.social.roblox && (
               <SocialLink
                 href={siteConfig.social.roblox}
@@ -59,7 +60,7 @@ export function Contact() {
                 <span className="text-sm text-muted-foreground">{siteConfig.social.discord}</span>
               </div>
             )}
-          </div>
+          </Reveal>
         </div>
       </div>
     </section>

@@ -4,6 +4,7 @@ import { useState } from "react"
 import Link from "next/link"
 import { games, projects, type Game, type Project } from "@/data/portfolio-data"
 import { ExternalLink, Users, ThumbsUp } from "lucide-react"
+import { Reveal } from "@/components/portfolio/reveal"
 
 type Tab = "games" | "projects"
 
@@ -55,16 +56,20 @@ function GameGrid() {
     <>
       {featuredGames.length > 0 && (
         <div className="grid md:grid-cols-2 gap-6 mb-8">
-          {featuredGames.map((game) => (
-            <GameCard key={game.id} game={game} featured />
+          {featuredGames.map((game, i) => (
+            <Reveal key={game.id} delay={i * 80}>
+              <GameCard game={game} featured />
+            </Reveal>
           ))}
         </div>
       )}
 
       {otherGames.length > 0 && (
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {otherGames.map((game) => (
-            <GameCard key={game.id} game={game} />
+          {otherGames.map((game, i) => (
+            <Reveal key={game.id} delay={i * 80}>
+              <GameCard game={game} />
+            </Reveal>
           ))}
         </div>
       )}
@@ -153,16 +158,20 @@ function ProjectGrid() {
     <>
       {featuredProjects.length > 0 && (
         <div className="grid md:grid-cols-2 gap-6 mb-8">
-          {featuredProjects.map((project) => (
-            <ProjectCard key={project.id} project={project} featured />
+          {featuredProjects.map((project, i) => (
+            <Reveal key={project.id} delay={i * 80}>
+              <ProjectCard project={project} featured />
+            </Reveal>
           ))}
         </div>
       )}
 
       {otherProjects.length > 0 && (
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {otherProjects.map((project) => (
-            <ProjectCard key={project.id} project={project} />
+          {otherProjects.map((project, i) => (
+            <Reveal key={project.id} delay={i * 80}>
+              <ProjectCard project={project} />
+            </Reveal>
           ))}
         </div>
       )}

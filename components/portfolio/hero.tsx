@@ -4,7 +4,6 @@ import { MapPin } from "lucide-react"
 export function Hero() {
   const startYear = Math.min(...careerItems.map((item) => Number.parseInt(item.startDate, 10)))
   const yearsBuilding = new Date().getFullYear() - startYear
-  const location = careerItems.find((item) => item.location)?.location
 
   const initials = siteConfig.name
     .split(" ")
@@ -20,10 +19,7 @@ export function Hero() {
   ]
 
   return (
-    <section id="about" className="relative pt-32 pb-20 px-6 overflow-hidden">
-      <div className="absolute -top-24 -left-24 w-96 h-96 bg-accent/20 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute top-10 -right-24 w-96 h-96 bg-accent-secondary/20 rounded-full blur-3xl pointer-events-none" />
-
+    <section id="about" className="relative pt-32 pb-20 px-6">
       <div className="relative max-w-5xl mx-auto">
         <div className="flex flex-col md:flex-row md:items-center gap-10">
           <div className="shrink-0">
@@ -45,10 +41,10 @@ export function Hero() {
           </div>
 
           <div className="flex-1 min-w-0">
-            {location && (
+            {siteConfig.location && (
               <div className="inline-flex items-center gap-1.5 px-3 py-1 mb-5 rounded-full border border-border bg-card/50 text-xs text-muted-foreground">
                 <MapPin className="w-3 h-3" />
-                {location}
+                {siteConfig.location}
               </div>
             )}
 
