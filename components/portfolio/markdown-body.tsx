@@ -151,13 +151,16 @@ export function MarkdownBody({ content }: { content: string }) {
 
           // Mermaid stretches the SVG to fill its container by default, which
           // shrinks wide/tall diagrams down to illegible text. Rendering at
-          // natural size + letting the wrapper scroll keeps them readable.
+          // natural size (capped so sprawling diagrams don't dominate the
+          // page) + letting the wrapper scroll keeps them readable.
           const svgEl = wrapper.querySelector("svg")
           const viewBox = svgEl?.getAttribute("viewBox")
           if (svgEl && viewBox) {
             const [, , w, h] = viewBox.split(/\s+/).map(Number)
-            svgEl.style.width = `${w}px`
-            svgEl.style.height = `${h}px`
+            const MAX_HEIGHT = 800
+            const scale = Math.min(1, MAX_HEIGHT / h)
+            svgEl.style.width = `${w * scale}px`
+            svgEl.style.height = `${h * scale}px`
             svgEl.style.maxWidth = "none"
           }
 

@@ -98,3 +98,32 @@
     }
   }
 }
+
+/* Themed scrollbar for horizontally-scrolling content (mermaid diagrams,
+   markdown tables) — mobile already gets a thin overlay scrollbar by
+   default, this is specifically for the default OS-light desktop bar. */
+.overflow-x-auto {
+  scrollbar-color: var(--border) transparent;
+  scrollbar-width: thin;
+}
+.overflow-x-auto::-webkit-scrollbar {
+  height: 8px;
+  background: transparent;
+}
+.overflow-x-auto::-webkit-scrollbar-thumb {
+  background-color: var(--border);
+  border-radius: 9999px;
+}
+.overflow-x-auto::-webkit-scrollbar-thumb:hover {
+  background-color: var(--muted-foreground);
+}
+
+/* Mermaid's default node stroke reads thin on small screens */
+@media (max-width: 767px) {
+  .node rect,
+  .node polygon,
+  .node circle,
+  .node ellipse {
+    stroke-width: 2.5px !important;
+  }
+}
