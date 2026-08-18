@@ -70,10 +70,37 @@ const markdownComponents: Components = {
   },
 }
 
+// Mermaid needs concrete colors, not CSS custom properties, so this resolves
+// each token to the browser's actual computed color at render time — stays
+// in sync with the site's palette instead of hardcoding a second copy of it.
+// getComputedStyle() serializes the site's oklch() tokens as lab(...), which
+// mermaid's internal color library can't parse — a 1x1 canvas normalizes
+// whatever color syntax the browser returns down to plain rgb().
+function resolveThemeColor(cssVar: string, fallback: string): string {
+  const probe = document.createElement("div")
+  probe.style.color = `var(${cssVar})`
+  document.body.appendChild(probe)
+  const raw = getComputedStyle(probe).color
+  document.body.removeChild(probe)
+
+  const canvas = document.createElement("canvas")
+  canvas.width = 1
+  canvas.height = 1
+  const ctx = canvas.getContext("2d")
+  if (!ctx || !raw) return fallback
+
+  ctx.fillStyle = raw
+  ctx.fillRect(0, 0, 1, 1)
+  const [r, g, b] = ctx.getImageData(0, 0, 1, 1).data
+  return `rgb(${r}, ${g}, ${b})`
+}
+
 export function MarkdownBody({ content }: { content: string }) {
   const containerRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
+    let cancelled = false
+
     async function renderMermaidBlocks() {
       const container = containerRef.current
       if (!container) return
@@ -82,18 +109,58 @@ export function MarkdownBody({ content }: { content: string }) {
       if (blocks.length === 0) return
 
       const mermaid = (await import("mermaid")).default
-      // Site's globals.css currently always renders the dark palette regardless of
-      // the theme toggle, so the dark mermaid theme is what actually matches today.
-      mermaid.initialize({ startOnLoad: false, theme: "dark" })
+      if (cancelled) return
+      const accent = resolveThemeColor("--accent", "#a78bfa")
+      const accentSecondary = resolveThemeColor("--accent-secondary", "#67e8f9")
+      const foreground = resolveThemeColor("--foreground", "#f5f5f5")
+      const card = resolveThemeColor("--card", "#262626")
+      const border = resolveThemeColor("--border", "#3f3f3f")
+
+      mermaid.initialize({
+        startOnLoad: false,
+        theme: "base",
+        themeVariables: {
+          background: "transparent",
+          primaryColor: card,
+          primaryBorderColor: accent,
+          primaryTextColor: foreground,
+          secondaryColor: card,
+          secondaryBorderColor: accentSecondary,
+          tertiaryColor: card,
+          lineColor: accentSecondary,
+          textColor: foreground,
+          mainBkg: card,
+          nodeBorder: accent,
+          clusterBkg: "transparent",
+          clusterBorder: border,
+          edgeLabelBackground: card,
+          fontFamily: "inherit",
+        },
+      })
 
       for (const [index, block] of Array.from(blocks).entries()) {
+        if (cancelled) return
         const definition = block.textContent ?? ""
         const id = `mermaid-diagram-${index}`
         try {
           const { svg } = await mermaid.render(id, definition)
+          if (cancelled) return
           const wrapper = document.createElement("div")
-          wrapper.className = "my-6 flex justify-center overflow-x-auto"
+          wrapper.className = "my-6 rounded-lg border border-border bg-card/40 p-4 overflow-x-auto"
           wrapper.innerHTML = svg
+
+          // Mermaid stretches the SVG to fill its container by default, which
+          // shrinks wide/tall diagrams down to illegible text. Rendering at
+          // natural size + letting the wrapper scroll keeps them readable.
+          const svgEl = wrapper.querySelector("svg")
+          const viewBox = svgEl?.getAttribute("viewBox")
+          if (svgEl && viewBox) {
+            const [, , w, h] = viewBox.split(/\s+/).map(Number)
+            svgEl.style.width = `${w}px`
+            svgEl.style.height = `${h}px`
+            svgEl.style.maxWidth = "none"
+          }
+
           block.closest("pre")?.replaceWith(wrapper)
         } catch (err) {
           console.error("Failed to render mermaid diagram", err)
@@ -102,6 +169,10 @@ export function MarkdownBody({ content }: { content: string }) {
     }
 
     renderMermaidBlocks()
+
+    return () => {
+      cancelled = true
+    }
   }, [content])
 
   return (

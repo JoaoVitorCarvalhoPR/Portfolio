@@ -36,7 +36,7 @@ The n8n workflow itself (145 nodes, not published) is really two independent flo
 ### Conversational flow
 
 ```mermaid
-flowchart TD
+flowchart LR
     subgraph R1["1 · Inbound & normalization"]
         direction TB
         r1a[SendPulse webhook] --> r1b[Classify event type] --> r1c{Valid event?}
