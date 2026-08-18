@@ -34,9 +34,9 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
   return (
     <div className="min-h-screen bg-background relative">
       <div className="fixed inset-0 z-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-[-15%] left-[-10%] w-[550px] h-[550px] bg-accent/15 rounded-full blur-[130px]" />
-        <div className="absolute top-[10%] right-[-15%] w-[600px] h-[600px] bg-accent-secondary/15 rounded-full blur-[130px]" />
-        <div className="absolute bottom-[-15%] right-[5%] w-[500px] h-[500px] bg-accent-secondary/10 rounded-full blur-[130px]" />
+        <div className="absolute top-[-15%] left-[-10%] w-[260px] h-[260px] md:w-[550px] md:h-[550px] bg-accent/8 md:bg-accent/15 rounded-full blur-[70px] md:blur-[130px]" />
+        <div className="absolute top-[10%] right-[-15%] w-[280px] h-[280px] md:w-[600px] md:h-[600px] bg-accent-secondary/8 md:bg-accent-secondary/15 rounded-full blur-[70px] md:blur-[130px]" />
+        <div className="absolute bottom-[-15%] right-[5%] w-[240px] h-[240px] md:w-[500px] md:h-[500px] bg-accent-secondary/5 md:bg-accent-secondary/10 rounded-full blur-[70px] md:blur-[130px]" />
       </div>
 
       <div className="relative z-10 max-w-3xl mx-auto px-6 py-16">
