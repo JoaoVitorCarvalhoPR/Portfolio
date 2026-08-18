@@ -89,4 +89,12 @@
   body {
     @apply bg-background text-foreground;
   }
+  html {
+    scroll-padding-top: 5rem;
+  }
+  @media (prefers-reduced-motion: no-preference) {
+    html {
+      scroll-behavior: smooth;
+    }
+  }
 }
