@@ -30,9 +30,9 @@ export function Highlights() {
 
 function HighlightCard({ highlight }: { highlight: Highlight }) {
   return (
-    <div className="group p-5 bg-card border border-border rounded-lg hover:border-muted-foreground/50 transition-colors">
+    <div className="group p-5 bg-card border border-border rounded-lg hover:border-accent/50 hover:shadow-[0_0_30px_-12px_var(--accent)] transition-all">
       <div className="flex items-start gap-4">
-        <div className="p-2 bg-secondary rounded-md text-muted-foreground group-hover:text-accent transition-colors">
+        <div className="p-2 bg-gradient-to-br from-accent/15 to-accent-secondary/15 rounded-md text-accent group-hover:from-accent/25 group-hover:to-accent-secondary/25 transition-colors">
           {iconMap[highlight.type]}
         </div>
         <div className="flex-1 min-w-0">

@@ -21,9 +21,9 @@ export function Work() {
         <div className="flex gap-2 mb-12 border border-border rounded-lg p-1 w-fit bg-card">
           <button
             onClick={() => setActiveTab("games")}
-            className={`px-4 py-2 rounded-md text-sm font-medium transition-colors ${
+            className={`px-4 py-2 rounded-md text-sm font-medium transition-all ${
               activeTab === "games"
-                ? "bg-secondary text-foreground"
+                ? "bg-gradient-to-r from-accent to-accent-secondary text-accent-foreground shadow-[0_0_20px_-6px_var(--accent)]"
                 : "text-muted-foreground hover:text-foreground"
             }`}
           >
@@ -31,9 +31,9 @@ export function Work() {
           </button>
           <button
             onClick={() => setActiveTab("projects")}
-            className={`px-4 py-2 rounded-md text-sm font-medium transition-colors ${
+            className={`px-4 py-2 rounded-md text-sm font-medium transition-all ${
               activeTab === "projects"
-                ? "bg-secondary text-foreground"
+                ? "bg-gradient-to-r from-accent to-accent-secondary text-accent-foreground shadow-[0_0_20px_-6px_var(--accent)]"
                 : "text-muted-foreground hover:text-foreground"
             }`}
           >
@@ -75,7 +75,7 @@ function GameGrid() {
 function GameCard({ game, featured = false }: { game: Game; featured?: boolean }) {
   return (
     <div
-      className={`group bg-card border border-border rounded-lg overflow-hidden hover:border-muted-foreground/50 transition-colors ${
+      className={`group bg-card border border-border rounded-lg overflow-hidden hover:border-accent/50 hover:shadow-[0_0_40px_-14px_var(--accent)] transition-all ${
         featured ? "md:flex md:flex-row" : ""
       }`}
     >
@@ -174,7 +174,7 @@ function ProjectCard({ project, featured = false }: { project: Project; featured
   return (
     <Link
       href={`/projects/${project.slug}`}
-      className={`group bg-card border border-border rounded-lg overflow-hidden hover:border-muted-foreground/50 transition-colors block ${
+      className={`group bg-card border border-border rounded-lg overflow-hidden hover:border-accent/50 hover:shadow-[0_0_40px_-14px_var(--accent)] transition-all block ${
         featured ? "md:flex md:flex-row" : ""
       }`}
     >

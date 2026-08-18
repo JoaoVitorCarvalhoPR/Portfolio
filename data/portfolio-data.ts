@@ -8,6 +8,7 @@ export const siteConfig = {
   title: "Software Developer — AI/LLM Systems & Roblox Game Development",
   description:
     "Software developer building AI-powered products (LLM integrations, RAG, automation) and Roblox game experiences.",
+  avatarUrl: "", // URL or /path/to/photo.jpg — falls back to initials when empty
   email: "joaovcprodrigues@gmail.com",
   social: {
     roblox: "https://www.roblox.com/users/43706814/profile",

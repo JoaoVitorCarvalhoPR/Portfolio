@@ -44,7 +44,8 @@ export function Career() {
 
 function CareerCard({ item }: { item: CareerItem }) {
   return (
-    <div className="group">
+    <div className="group relative pl-5 border-l-2 border-border hover:border-accent transition-colors">
+      <span className="absolute -left-[5px] top-1.5 w-2 h-2 rounded-full bg-border group-hover:bg-accent transition-colors" />
       <div className="text-sm text-muted-foreground mb-1">
         {item.startDate} — {item.endDate || "Present"}
       </div>

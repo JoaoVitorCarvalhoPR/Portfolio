@@ -16,9 +16,9 @@ export function Contact() {
           <div>
             <a
               href={`mailto:${siteConfig.email}`}
-              className="group flex items-center gap-3 p-4 bg-card border border-border rounded-lg hover:border-muted-foreground/50 transition-colors"
+              className="group flex items-center gap-3 p-4 bg-card border border-border rounded-lg hover:border-accent/50 hover:shadow-[0_0_30px_-12px_var(--accent)] transition-all"
             >
-              <div className="p-2 bg-secondary rounded-md text-muted-foreground group-hover:text-accent transition-colors">
+              <div className="p-2 bg-gradient-to-br from-accent/15 to-accent-secondary/15 rounded-md text-accent transition-colors">
                 <Mail className="w-5 h-5" />
               </div>
               <div>
@@ -80,7 +80,7 @@ function SocialLink({
       href={href}
       target="_blank"
       rel="noopener noreferrer"
-      className="group flex items-center gap-2 px-4 py-3 bg-card border border-border rounded-lg hover:border-muted-foreground/50 transition-colors"
+      className="group flex items-center gap-2 px-4 py-3 bg-card border border-border rounded-lg hover:border-accent/50 hover:shadow-[0_0_30px_-12px_var(--accent)] transition-all"
       aria-label={label}
     >
       <span className="text-muted-foreground group-hover:text-accent transition-colors">
