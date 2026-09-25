@@ -180,13 +180,36 @@ function ProjectGrid() {
 }
 
 function ProjectCard({ project, featured = false }: { project: Project; featured?: boolean }) {
+  const cardClassName = `group bg-card border border-border rounded-lg overflow-hidden hover:border-accent/50 hover:shadow-[0_0_40px_-14px_var(--accent)] transition-all block ${
+    featured ? "md:flex md:flex-row" : ""
+  }`
+
+  // Landing pages open the actual demo (a local static copy, so it keeps working
+  // even if the live site goes down) instead of the /projects/[slug] write-up.
+  if (project.demoUrl) {
+    return (
+      <a
+        href={project.demoUrl}
+        target="_blank"
+        rel="noopener noreferrer"
+        className={cardClassName}
+        aria-label={`Open ${project.title} demo`}
+      >
+        <ProjectCardBody project={project} featured={featured} />
+      </a>
+    )
+  }
+
   return (
-    <Link
-      href={`/projects/${project.slug}`}
-      className={`group bg-card border border-border rounded-lg overflow-hidden hover:border-accent/50 hover:shadow-[0_0_40px_-14px_var(--accent)] transition-all block ${
-        featured ? "md:flex md:flex-row" : ""
-      }`}
-    >
+    <Link href={`/projects/${project.slug}`} className={cardClassName}>
+      <ProjectCardBody project={project} featured={featured} />
+    </Link>
+  )
+}
+
+function ProjectCardBody({ project, featured = false }: { project: Project; featured?: boolean }) {
+  return (
+    <>
       <div
         className={`bg-secondary aspect-video flex items-center justify-center ${
           featured ? "md:w-1/2 md:aspect-auto md:min-h-[200px]" : ""
@@ -221,6 +244,6 @@ function ProjectCard({ project, featured = false }: { project: Project; featured
           ))}
         </div>
       </div>
-    </Link>
+    </>
   )
 }

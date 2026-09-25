@@ -163,6 +163,7 @@ export type Project = {
   tags: string[]
   featured?: boolean
   externalUrl?: string // e.g. GitHub repo link, shown on the detail page
+  demoUrl?: string // local static copy of a live site (served from /public) — when set, the card opens this directly instead of the /projects/[slug] write-up
 }
 
 export const projects: Project[] = [
@@ -177,6 +178,28 @@ export const projects: Project[] = [
     tags: ["AI/LLM", "n8n", "RAG", "OpenAI", "PostgreSQL", "Automation"],
     featured: true,
     externalUrl: "https://github.com/JoaoVitorCarvalhoPR/real-estate-ai-chatbot",
+  },
+  {
+    id: "2",
+    slug: "monte-tivoli-landing",
+    title: "Monte Tivoli — Landing Page",
+    description:
+      "Landing page for the Monte Tivoli real estate launch in Cocal, Vila Velha - ES. Property details, amenities, location map, and a financing simulator.",
+    imageUrl: "/Portfolio/projects/monte-tivoli-landing/assets/img/exterior/hero-fachada.jpg",
+    tags: ["HTML", "CSS", "JavaScript", "Landing Page"],
+    externalUrl: "https://github.com/JoaoVitorCarvalhoPR/monte-tivoli-landing",
+    demoUrl: "/Portfolio/projects/monte-tivoli-landing/index.html",
+  },
+  {
+    id: "3",
+    slug: "vivenda-coqueiral-landing",
+    title: "Vivenda Coqueiral — Landing Page",
+    description:
+      "Landing page for the Vivenda Coqueiral real estate launch in the Coqueiral neighborhood, Vila Velha - ES. 2 and 3-bedroom apartments with full amenities.",
+    imageUrl: "/Portfolio/projects/vivenda-coqueiral-landing/assets/img/exterior/fachada-frontal.jpg",
+    tags: ["HTML", "CSS", "JavaScript", "Landing Page"],
+    externalUrl: "https://github.com/JoaoVitorCarvalhoPR/Vivenda_Coqueiral_LandingPage",
+    demoUrl: "/Portfolio/projects/vivenda-coqueiral-landing/index.html",
   },
 ]
 
