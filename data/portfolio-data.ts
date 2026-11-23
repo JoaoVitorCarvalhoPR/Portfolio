@@ -187,7 +187,6 @@ export const projects: Project[] = [
       "Landing page for the Monte Tivoli real estate launch in Cocal, Vila Velha - ES. Property details, amenities, location map, and a financing simulator.",
     imageUrl: "/Portfolio/projects/monte-tivoli-landing/assets/img/exterior/hero-fachada.jpg",
     tags: ["HTML", "CSS", "JavaScript", "Landing Page"],
-    externalUrl: "https://github.com/JoaoVitorCarvalhoPR/monte-tivoli-landing",
     demoUrl: "/Portfolio/projects/monte-tivoli-landing/index.html",
   },
   {
@@ -198,8 +197,25 @@ export const projects: Project[] = [
       "Landing page for the Vivenda Coqueiral real estate launch in the Coqueiral neighborhood, Vila Velha - ES. 2 and 3-bedroom apartments with full amenities.",
     imageUrl: "/Portfolio/projects/vivenda-coqueiral-landing/assets/img/exterior/fachada-frontal.jpg",
     tags: ["HTML", "CSS", "JavaScript", "Landing Page"],
-    externalUrl: "https://github.com/JoaoVitorCarvalhoPR/Vivenda_Coqueiral_LandingPage",
     demoUrl: "/Portfolio/projects/vivenda-coqueiral-landing/index.html",
+  },
+  {
+    id: "4",
+    slug: "kilo",
+    title: "Kilo — Gym Training App",
+    description:
+      "Offline-first Android app for planning and tracking gym workouts, built with React Native and Expo. Cycle-based training plans, a rest timer, streaks and achievements, volume charts per muscle on an interactive body map, and JSON backup. All data stays on the phone.",
+    fallbackIcon: "🏋️",
+    tags: ["React Native", "Expo", "TypeScript", "SQLite", "Android"],
+  },
+  {
+    id: "5",
+    slug: "prumo",
+    title: "Prumo — Real Estate Platform (in development)",
+    description:
+      "Multi-tenant real estate platform in active development: CRM, property management, a WhatsApp AI assistant, portal publishing and public agency sites. The next evolution of the n8n-based assistant into a first-party TypeScript system. Private repository.",
+    fallbackIcon: "🧭",
+    tags: ["In development", "TypeScript", "PostgreSQL", "Multi-tenant", "AI/LLM", "Private"],
   },
 ]
 
