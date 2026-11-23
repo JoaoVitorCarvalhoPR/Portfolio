@@ -9,27 +9,17 @@ import { Reveal } from "@/components/portfolio/reveal"
 type Tab = "games" | "projects"
 
 export function Work() {
-  const [activeTab, setActiveTab] = useState<Tab>("games")
+  const [activeTab, setActiveTab] = useState<Tab>("projects")
 
   return (
     <section id="work" className="py-20 px-6 border-t border-border">
       <div className="max-w-5xl mx-auto">
         <h2 className="text-2xl font-bold text-foreground mb-4">Work</h2>
         <p className="text-muted-foreground mb-8 max-w-2xl">
-          Games and AI-powered tools I've built — from Roblox experiences to production LLM systems.
+          AI-powered products and games I've built — from production LLM systems to Roblox experiences.
         </p>
 
         <div className="flex gap-2 mb-12 border border-border rounded-lg p-1 w-fit bg-card">
-          <button
-            onClick={() => setActiveTab("games")}
-            className={`px-4 py-2 rounded-md text-sm font-medium transition-all ${
-              activeTab === "games"
-                ? "bg-gradient-to-r from-accent to-accent-secondary text-accent-foreground shadow-[0_0_20px_-6px_var(--accent)]"
-                : "text-muted-foreground hover:text-foreground"
-            }`}
-          >
-            Games
-          </button>
           <button
             onClick={() => setActiveTab("projects")}
             className={`px-4 py-2 rounded-md text-sm font-medium transition-all ${
@@ -40,9 +30,19 @@ export function Work() {
           >
             Projects
           </button>
+          <button
+            onClick={() => setActiveTab("games")}
+            className={`px-4 py-2 rounded-md text-sm font-medium transition-all ${
+              activeTab === "games"
+                ? "bg-gradient-to-r from-accent to-accent-secondary text-accent-foreground shadow-[0_0_20px_-6px_var(--accent)]"
+                : "text-muted-foreground hover:text-foreground"
+            }`}
+          >
+            Games
+          </button>
         </div>
 
-        {activeTab === "games" ? <GameGrid /> : <ProjectGrid />}
+        {activeTab === "projects" ? <ProjectGrid /> : <GameGrid />}
       </div>
     </section>
   )
