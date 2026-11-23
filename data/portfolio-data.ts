@@ -205,6 +205,7 @@ export const projects: Project[] = [
     title: "Kilo — Gym Training App",
     description:
       "Offline-first Android app for planning and tracking gym workouts, built with React Native and Expo. Cycle-based training plans, a rest timer, streaks and achievements, volume charts per muscle on an interactive body map, and JSON backup. All data stays on the phone.",
+    imageUrl: "/Portfolio/projects/kilo.png",
     fallbackIcon: "🏋️",
     tags: ["React Native", "Expo", "TypeScript", "SQLite", "Android"],
   },
@@ -214,6 +215,7 @@ export const projects: Project[] = [
     title: "Prumo — Real Estate Platform (in development)",
     description:
       "Multi-tenant real estate platform in active development: CRM, property management, a WhatsApp AI assistant, portal publishing and public agency sites. The next evolution of the n8n-based assistant into a first-party TypeScript system. Private repository.",
+    imageUrl: "/Portfolio/projects/prumo.png",
     fallbackIcon: "🧭",
     tags: ["In development", "TypeScript", "PostgreSQL", "Multi-tenant", "AI/LLM", "Private"],
   },
