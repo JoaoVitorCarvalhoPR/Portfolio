@@ -16,7 +16,7 @@ export function Work() {
       <div className="max-w-5xl mx-auto">
         <h2 className="text-2xl font-bold text-foreground mb-4">Work</h2>
         <p className="text-muted-foreground mb-8 max-w-2xl">
-          AI-powered products and games I've built — from production LLM systems to Roblox experiences.
+          Products and games I've built — from full-stack platforms and mobile apps to Roblox experiences.
         </p>
 
         <div className="flex gap-2 mb-12 border border-border rounded-lg p-1 w-fit bg-card">

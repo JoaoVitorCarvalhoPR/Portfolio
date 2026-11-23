@@ -5,9 +5,9 @@
 
 export const siteConfig = {
   name: "João Rodrigues",
-  title: "Software Developer — AI/LLM Systems & Roblox Game Development",
+  title: "Full-Stack Developer — Web, Mobile & Roblox Games",
   description:
-    "I build software people actually use: AI assistants running in production, full-stack web and mobile apps, and Roblox games played by more than 1.5 million people.",
+    "I build software people actually use: full-stack platforms, web and mobile apps, and Roblox games played by more than 1.5 million people.",
   avatarUrl: "", // URL or /path/to/photo.jpg — falls back to initials when empty
   location: "Vila Velha, Espírito Santo",
   email: "joaovcprodrigues@gmail.com",

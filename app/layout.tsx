@@ -6,8 +6,8 @@ import './globals.css'
 const inter = Inter({ subsets: ["latin"], variable: "--font-sans" });
 
 export const metadata: Metadata = {
-  title: 'Portfolio | Desenvolvedor de Software & IA',
-  description: 'Portfolio de desenvolvedor de software - projetos de IA/LLM, automação e jogos Roblox.',
+  title: 'Portfolio | Desenvolvedor Full-Stack',
+  description: 'Portfolio de desenvolvedor full-stack - plataformas web, apps mobile e jogos Roblox.',
   generator: 'v0.app',
   icons: {
     icon: [
